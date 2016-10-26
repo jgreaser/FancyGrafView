@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <title>Simple Polished Graphs</title>
+</head>
+
+<script src="lib/angular.js"></script>
+<script src="lib/ui-bootstrap.js"></script>
+<script src="lib/angular-animate.js"></script>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+<!--TD's in your code, using new style sheets-->
+<link rel="stylesheet" href="lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+<link rel="stylesheet" href="lib/stylezz.css">
+
+<script src="lib/jsxgraphcore.js" charset="utf-8"></script>
+<!---->
+<script src="lib/angular-jsx-graph.js"></script>
+<!---->
+<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link href="lib/jsxgraph.css" rel="stylesheet">
+
+<script src="app.js"></script>
+<!---->
+<script src="graph.controller.js"></script>
+<script src="subscribe.controller.js"></script>
+<script src="subscribe.service.js"></script>
+
+<!---->
+<script src="graph.service.js"></script>
+<!---->
+
+<style>
+    .logo {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    
+    button {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-family: 'Dosis';
+    }
+    
+    body {
+        background-color: #F5F5F5;
+    }
+    
+    h1 {
+        margin-top: 5px;
+        margin-left: 5px;
+        font-family: 'Lobster';
+    }
+    
+    h4 {
+        font-family: 'Dosis';
+    }
+    
+    .w3-lobster {
+        font-family: 'Lobster', serif;
+    }
+    
+    .w3-dosis {
+        font-family: 'Dosis', serif;
+    }
+    
+    .w3-invisible {
+        display: none;
+    }
+
+    .mytext{
+        font-size: 20px !important;
+        color: rgb(120, 142, 82) !important;
+        font-weight: bold !important;
+    }
+    .mytext:hover{
+        font-size: 20px !important;
+        color: rgb(120, 142, 82) !important;
+        font-weight: bold !important;
+    }
+</style>
+
+<body ng-app="app">
+    <!--<img src="img/logo.png" class="logo" />-->
+
+    <ul class="w3-navbar w3-theme-d5 w3-top w3-xlarge">
+        <li><a class="w3-pink w3-lobster w3-xlarge" href="#">fancygraf</a></li>
+            </ul>
+
+    <!--dropdown notes-->
+   
+
+
+
+
+    <div class="container" style="height:50px">
+    </div>
+    <div class="container">
+        <div ng-controller="graphController as grphCtrl">
+            <div class="w3-row-padding">
+
+                
+
+                <!--RIGHT-->
+                <div class="">
+
+                    <!--Canvas-->
+                    <div class="w3-card-2 w3-white w3-round">
+                        <h4 class="w3-padding-left w3-theme-d2"><i class="fa fa-line-chart"></i> The Graph</h4>
+                        <div class="w3-padding w3-center">
+                            
+                            <div id="jxgbox" class="jxgbox" style="width:500px; height:600px;"></div>
+
+<!-- 
+                            <canvas ng-hide="false" id="cvoutput" width="300" height="300" style="margin-top: 20px" ng-click="grphCtrl.updateBoardAttributes('default')"></canvas><br />
+
+
+                            <div id="graphContainer" class="" >
+                                <div id="box" class="jxgbox" style="align:center; width:300px; height:300px; background-color: #f3f5f1;" jxg-board="grphCtrl.boardAttributes" jxg-callback="grphCtrl.cb"></div>
+                            </div> -->
+                            <div><p><b>DATA:</b><i>{{grphCtrl.dataSet}}</i></p>
+                            <p><b>ALT:</b><i>{{grphCtrl.altAttr}}</i></p></div>
+                            
+                            
+
+                          
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row w3-center">
+                <pre>{{grphCtrl.graphObject}}</pre>
+            </div>
+            <!--Bottom Notes-->
+            <div class="w3-row w3-center">
+                <img src="img/fancygrafGREY.png" style="width:7%" class="w3-center logo" /><br>
+                <p class="w3-text-grey w3-small">Another fine Innovation Team product</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("myDropnav").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("myDropnav").style.display = "none";
+        }
+
+        function w3_start() {
+            document.getElementById("loading").style.display = "none";
+        }
+
+        function w3_restart() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+
+</body>
+
+
+</html>
